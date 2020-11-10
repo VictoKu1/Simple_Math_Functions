@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include "myMath.h"
-
 int main(){
 	double x = 0 ; /*Initiating the parameter .*/
-	printf("Please insert a real number\n"); /*Printing a messege to recieve a number that the user wants to be the X if the following fucntions.*/
-	scanf("%lf", &x); /*Recieves a number from the user and point the initiated parameter few lines before to it. */
+	printf("Please insert a real number :\n"); /*Printing a messege to recieve a number that the user wants to be the X if the following fucntions.*/
+    if (!scanf("%lf", &x)) { /*Getting a number from the user and checking if it's  valid . */
+      printf("Error: this is not a real number , please enter a real number next time ! \n"); /*If the input is invalid , error message will be printed .*/
+      return 0 ; /*Due to the invaldity of the input the main() function will stop .*/
+    }
 	float irs = sub(add((float)Exponent((int)x),(float)Power(x,3)),2); /*Calculates (i) .*/
 	float iires = add((float)(mul(x,3)),(float)(mul((Power(x,2)),2))) ; /*Calculates (ii) .*/
 	float iiirs = sub((float)(div((mul(Power(x,3),4)),5)),(float)(mul(x,2))); /*Calculates (ii) .*/
