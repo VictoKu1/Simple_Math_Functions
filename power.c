@@ -10,6 +10,9 @@ double Power(double x, int y){
 	if (y>1){
 		return( x* Power(x,(y-1)));
 	}
+    if(y<0){
+        return ((1/(Power(x,((-1)*(y))))));
+    }
 	return  1;
 }
 /*Function that calculates e^x where e is Euler's number , a constant equal to 2.718281. */
